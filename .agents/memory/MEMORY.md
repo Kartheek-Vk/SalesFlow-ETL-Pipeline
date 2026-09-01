@@ -1,2 +1,0 @@
-- [Python Spark runtime](python-spark-runtime.md) — PySpark needs Java and currently pairs best with Pandas below 3.0.
-- [Streamlit headless runtime](streamlit-headless-runtime.md) — Non-interactive launches need headless mode to avoid the first-run prompt.
