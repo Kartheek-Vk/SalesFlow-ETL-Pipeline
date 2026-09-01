@@ -17,12 +17,20 @@ __pycache__/
 .pytest_cache/
 .pythonlibs/
 .venv/
+.env
+.env.*
+!.env.example
+credentials/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+attached_assets/
 
 # Generated pipeline outputs (raw CSVs are reproducible via the generator)
 data/processed/
 data/rejected/
 data/reports/
-data/salesflow.db
 logs/
 
 # IDEs and editors

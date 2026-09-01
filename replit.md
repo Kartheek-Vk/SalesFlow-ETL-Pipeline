@@ -7,6 +7,7 @@ An interview-ready Python data engineering portfolio project that turns messy e-
 - `python scripts/generate_data.py` — generate the reproducible raw dataset
 - `python run_pipeline.py` — run ingestion, validation, Spark transformation, quality reporting, and SQLite loading
 - `python -m uvicorn api.main:app --reload` — run the analytics API locally
+- `streamlit run ui/dashboard.py` — run the lightweight analytics dashboard
 - `pnpm --filter @workspace/api-server run dev` — generate, run the pipeline, and serve the API through the preview
 - `pnpm run typecheck` — full typecheck across all packages
 - `pytest -q` — run the automated test suite
@@ -23,6 +24,7 @@ An interview-ready Python data engineering portfolio project that turns messy e-
 - `salesflow/database/sqlite_loader.py` — warehouse schema and load
 - `salesflow/analytics/queries.py` — source-of-truth SQL analytics
 - `api/main.py` — FastAPI routes and Pydantic response models
+- `ui/dashboard.py` — Streamlit presentation layer over SQLite and quality outputs
 - `run_pipeline.py` — end-to-end entry point
 
 ## Architecture decisions

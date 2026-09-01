@@ -36,6 +36,7 @@ def _finalize(
     invalid_masks: Iterable[tuple[str, pd.Series]],
     checks: list[dict[str, object]],
 ) -> ValidationResult:
+    frame = frame.reset_index(drop=True).copy()
     reasons: dict[object, list[str]] = {index: [] for index in frame.index}
     for reason, mask in invalid_masks:
         count = int(mask.fillna(False).sum())
@@ -62,7 +63,7 @@ def _finalize(
 
 
 def validate_customers(frame: pd.DataFrame) -> ValidationResult:
-    data = frame.copy()
+    data = frame.reset_index(drop=True).copy()
     data["age_num"] = pd.to_numeric(data["age"], errors="coerce")
     data["signup_date_parsed"] = pd.to_datetime(data["signup_date"], errors="coerce")
     duplicate_id = data["customer_id"].duplicated(keep=False) | data["customer_id"].isna()
@@ -81,7 +82,7 @@ def validate_customers(frame: pd.DataFrame) -> ValidationResult:
 
 
 def validate_products(frame: pd.DataFrame) -> ValidationResult:
-    data = frame.copy()
+    data = frame.reset_index(drop=True).copy()
     data["unit_price_num"] = pd.to_numeric(data["unit_price"], errors="coerce")
     duplicate_id = data["product_id"].duplicated(keep=False) | data["product_id"].isna()
     masks = [
@@ -99,7 +100,7 @@ def validate_products(frame: pd.DataFrame) -> ValidationResult:
 def validate_orders(
     frame: pd.DataFrame, customer_ids: set[str], product_ids: set[str]
 ) -> ValidationResult:
-    data = frame.copy()
+    data = frame.reset_index(drop=True).copy()
     data["quantity_num"] = pd.to_numeric(data["quantity"], errors="coerce")
     data["discount_num"] = pd.to_numeric(data["discount"], errors="coerce")
     data["order_date_parsed"] = pd.to_datetime(data["order_date"], errors="coerce")
@@ -127,7 +128,15 @@ def write_rejections(results: dict[str, ValidationResult], rejected_dir: Path) -
     total = 0
     for name, result in results.items():
         path = rejected_dir / f"{name}.csv"
-        result.rejected.to_csv(path, index=False)
-        total += len(result.rejected)
+        rejected = result.rejected.drop(
+            columns=[
+                column
+                for column in result.rejected.columns
+                if column.endswith("_num") or column.endswith("_parsed")
+            ],
+            errors="ignore",
+        )
+        rejected.to_csv(path, index=False)
+        total += len(rejected)
         logger.info("rejected_records_written file=%s records=%d", path, len(result.rejected))
     return total

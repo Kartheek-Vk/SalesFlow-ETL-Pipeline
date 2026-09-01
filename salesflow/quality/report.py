@@ -18,6 +18,10 @@ def build_quality_report(
     report_path: Path,
 ) -> dict[str, object]:
     checks = list(checks)
+    orphan_count = int(
+        (~transformed["customer_id"].isin(frames["customers"]["customer_id"])).sum()
+        + (~transformed["product_id"].isin(frames["products"]["product_id"])).sum()
+    )
     checks.extend([
         {
             "check": "fact_null_values",
@@ -29,11 +33,8 @@ def build_quality_report(
         {
             "check": "orphan_fact_records",
             "total_records": len(transformed),
-            "failed_records": int(
-                (~transformed["customer_id"].isin(frames["customers"]["customer_id"])).sum()
-                + (~transformed["product_id"].isin(frames["products"]["product_id"])).sum()
-            ),
-            "status": "passed",
+            "failed_records": orphan_count,
+            "status": "passed" if orphan_count == 0 else "failed",
             "details": "Spark inner joins prevent orphan fact rows",
         },
     ])

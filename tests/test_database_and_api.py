@@ -4,6 +4,8 @@ from fastapi.testclient import TestClient
 
 from api.main import app
 from salesflow.analytics.queries import summary
+from salesflow.config import REJECTED_DIR, REPORTS_DIR
+from ui.dashboard import load_dashboard_data
 
 
 def test_database_contains_expected_tables(database_path):
@@ -53,3 +55,17 @@ def test_quality_report_endpoint():
     response = TestClient(app).get("/quality/report")
     assert response.status_code == 200
     assert response.json()["rejected_records"] > 0
+
+
+def test_dashboard_loader_reads_real_outputs(database_path, pipeline_result):
+    data = load_dashboard_data(str(database_path), str(REPORTS_DIR / "quality_report.json"), str(REJECTED_DIR))
+    assert data["ready"] is True
+    assert data["summary"]["total_revenue"] == summary(database_path)["total_revenue"]
+    assert data["quality"]["rejected_records"] == pipeline_result["records_rejected"]
+
+
+def test_dashboard_loader_includes_rejection_reasons(database_path):
+    data = load_dashboard_data(str(database_path), str(REPORTS_DIR / "quality_report.json"), str(REJECTED_DIR))
+    rejected = data["rejected"]
+    assert not rejected.empty
+    assert {"dataset", "rejection_reasons"} <= set(rejected.columns)

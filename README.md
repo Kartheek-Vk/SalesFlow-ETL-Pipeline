@@ -39,8 +39,9 @@ SQLite warehouse
       v
 SQL analytics queries
       |
-      v
-FastAPI read-only endpoints
+      +--------------------> FastAPI read-only endpoints
+      |
+      +--------------------> Streamlit demonstration dashboard
 ```
 
 ## Technology stack
@@ -176,6 +177,24 @@ Interactive documentation is available at `http://localhost:8000/docs`.
 | GET | `/quality/report` | Full data-quality report |
 
 The preview service also exposes the same endpoints under `/api`, for example `/api/health` and `/api/analytics/summary`.
+
+## Dashboard
+
+Streamlit provides a lightweight visualization layer over the processed SQLite data and the generated quality report. It displays:
+
+- KPI values for revenue, orders, average order value, discounts, cancellations, and customers
+- Revenue analytics by category, state, and month
+- Top-product analytics
+- Rejected records and validation reasons
+- Pipeline source, stages, database, Spark status, and last execution time
+
+Start the dashboard after generating the data and running the ETL pipeline:
+
+```bash
+streamlit run ui/dashboard.py
+```
+
+The dashboard is a presentation layer; the underlying ETL, validation, PySpark processing, and SQL analytics form the core of the project. It does not bypass the pipeline or hardcode analytics values.
 
 Example response:
 
