@@ -1,0 +1,35 @@
+customer_id,customer_name,age,gender,city,state,signup_date
+C0001,Customer 01,26,F,Mumbai,Maharashtra,2023-01-10
+C0002,Customer 02,36,F,Hyderabad,Telangana,2023-01-19
+C0003,Customer 03,33,F,Chennai,Tamil Nadu,2023-01-28
+C0004,Customer 04,25,Non-binary,New Delhi,Delhi,2023-02-06
+C0005,Customer 05,53,F,Ahmedabad,Gujarat,2023-02-15
+C0006,Customer 06,56,M,Bengaluru,Karnataka,2023-02-24
+C0007,Customer 07,21,F,Mumbai,Maharashtra,2023-03-05
+C0008,Customer 08,24,F,Hyderabad,Telangana,2023-03-14
+C0009,Customer 09,33,Non-binary,Chennai,Tamil Nadu,2023-03-23
+C0010,Customer 10,57,F,New Delhi,Delhi,2023-04-01
+C0011,Customer 11,54,F,Ahmedabad,Gujarat,2023-04-10
+C0012,Customer 12,53,M,Bengaluru,Karnataka,2023-04-19
+C0013,Customer 13,33,M,Mumbai,Maharashtra,2023-04-28
+C0014,Customer 14,56,M,Hyderabad,Telangana,2023-05-07
+C0015,Customer 15,19,F,Chennai,Tamil Nadu,2023-05-16
+C0016,Customer 16,46,M,New Delhi,Delhi,2023-05-25
+C0017,Customer 17,36,F,Ahmedabad,Gujarat,2023-06-03
+C0018,Customer 18,32,M,Bengaluru,Karnataka,2023-06-12
+C0019,Customer 19,25,F,Mumbai,Maharashtra,2023-06-21
+C0020,Customer 20,43,F,Hyderabad,Telangana,2023-06-30
+C0021,Customer 21,41,M,Chennai,Tamil Nadu,2023-07-09
+C0022,Customer 22,57,M,New Delhi,Delhi,2023-07-18
+C0023,Customer 23,21,Non-binary,Ahmedabad,Gujarat,2023-07-27
+C0024,Customer 24,48,Non-binary,Bengaluru,Karnataka,2023-08-05
+C0025,Customer 25,26,M,Mumbai,Maharashtra,2023-08-14
+C0026,Customer 26,24,Non-binary,Hyderabad,Telangana,2023-08-23
+C0027,Customer 27,37,Non-binary,Chennai,Tamil Nadu,2023-09-01
+C0028,Customer 28,58,M,New Delhi,Delhi,2023-09-10
+C0029,Customer 29,55,F,Ahmedabad,Gujarat,2023-09-19
+C0030,Customer 30,23,F,Bengaluru,Karnataka,2023-09-28
+C0001,Duplicate Customer,26,F,Mumbai,Maharashtra,2023-01-10
+C9999,Customer 02,8,F,Hyderabad,Telangana,2023-01-19
+C9998,Customer 03,33,F,Chennai,Tamil Nadu,not-a-date
+C9997,,25,Non-binary,New Delhi,Delhi,2023-02-06

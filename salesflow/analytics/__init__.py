@@ -1,0 +1,1 @@
+"""Readable SQL analytics queries."""

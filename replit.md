@@ -1,44 +1,49 @@
-# [Project name]
+# SalesFlow ETL
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+An interview-ready Python data engineering portfolio project that turns messy e-commerce CSVs into validated Spark facts, SQLite analytics, and a FastAPI read layer.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `python scripts/generate_data.py` — generate the reproducible raw dataset
+- `python run_pipeline.py` — run ingestion, validation, Spark transformation, quality reporting, and SQLite loading
+- `python -m uvicorn api.main:app --reload` — run the analytics API locally
+- `pnpm --filter @workspace/api-server run dev` — generate, run the pipeline, and serve the API through the preview
 - `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pytest -q` — run the automated test suite
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Python 3.11, Pandas, PySpark, SQLite, FastAPI, Pydantic, pytest
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `salesflow/ingestion/reader.py` — extract CSV files and log counts
+- `salesflow/validation/rules.py` — validation rules and reject-file handling
+- `salesflow/transformation/spark_transform.py` — PySpark joins and revenue calculations
+- `salesflow/database/sqlite_loader.py` — warehouse schema and load
+- `salesflow/analytics/queries.py` — source-of-truth SQL analytics
+- `api/main.py` — FastAPI routes and Pydantic response models
+- `run_pipeline.py` — end-to-end entry point
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Raw data is intentionally dirty so the quality layer is visible during a portfolio walkthrough.
+- Rejected records are written separately with rule-level reasons; they are never silently dropped.
+- SQLite is the local warehouse; the same star-schema boundary can be moved to a managed SQL engine.
+- Spark owns the main join and derived-metric work, even though the included dataset is intentionally small.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Run one command to create sample data and populate a local analytics database, then query revenue, products, categories, states, months, and the quality report through documented API endpoints.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+The implementation should remain understandable to a 3rd-year B.Tech student presenting it in an internship interview.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Run `python scripts/generate_data.py` before the first pipeline run in a clean checkout.
+- The FastAPI service intentionally reports database-not-ready until `run_pipeline.py` has completed.
 
 ## Pointers
 

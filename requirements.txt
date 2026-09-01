@@ -1,0 +1,8 @@
+pandas>=2.2,<3
+pyspark>=4.2
+fastapi>=0.141
+uvicorn>=0.52
+pydantic>=2.13
+pytest>=9.1
+httpx>=0.28
+pandas==2.2.3

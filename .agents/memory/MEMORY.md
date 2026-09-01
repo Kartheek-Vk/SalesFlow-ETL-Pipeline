@@ -1,0 +1,1 @@
+- [Python Spark runtime](python-spark-runtime.md) — PySpark needs Java and currently pairs best with Pandas below 3.0.

@@ -1,0 +1,14 @@
+[project]
+name = "salesflow-etl"
+version = "0.1.0"
+description = "SalesFlow ETL: an interview-ready PySpark sales pipeline with SQLite analytics"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.141.1",
+    "httpx>=0.28.1",
+    "pandas>=2.2,<3",
+    "pydantic>=2.13.5",
+    "pyspark>=4.2.0",
+    "pytest>=9.1.1",
+    "uvicorn>=0.52.4",
+]
