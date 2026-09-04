@@ -99,6 +99,7 @@ Every validation function returns two data frames:
 Checks include null required fields, duplicate IDs, numeric ranges, dates, foreign keys, order status, and orphan fact rows. The report in `data/reports/quality_report.json` records totals, valid and rejected counts, failed check names, per-check counts, a timestamp, and an overall score.
 
 Bad data is never silently deleted. In a production pipeline, these reject files would normally be sent to a quarantine location for remediation and replay.
+https://venkatakartheek.streamlit.app/#sales-flow-etl
 
 ## Data model
 
