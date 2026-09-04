@@ -69,3 +69,45 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Replit / generated workspace files
+.agents/
+.conversation/
+artifacts/
+lib/
+.replit
+.replitignore
+.npmrc
+replit.md
+
+# Node / frontend artifacts
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package.json
+tsconfig.json
+tsconfig.base.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Local generated data
+data/processed/
+data/rejected/
+data/reports/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
