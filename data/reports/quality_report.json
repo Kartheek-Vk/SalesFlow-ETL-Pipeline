@@ -1,0 +1,144 @@
+{
+  "validation_timestamp": "2026-09-04T15:20:52.266591+00:00",
+  "total_records": 173,
+  "valid_records": 138,
+  "rejected_records": 35,
+  "failed_checks": [
+    "null_customer_fields",
+    "duplicate_customer_id",
+    "impossible_age",
+    "invalid_signup_date",
+    "null_product_fields",
+    "duplicate_product_id",
+    "invalid_price",
+    "null_order_fields",
+    "duplicate_order_id",
+    "invalid_quantity",
+    "invalid_discount",
+    "invalid_order_date",
+    "invalid_customer_reference",
+    "invalid_product_reference"
+  ],
+  "quality_score": 79.8,
+  "checks": [
+    {
+      "check": "null_customer_fields",
+      "total_records": 34,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "duplicate_customer_id",
+      "total_records": 34,
+      "failed_records": 2,
+      "status": "failed",
+      "details": "2 row(s) failed"
+    },
+    {
+      "check": "impossible_age",
+      "total_records": 34,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "invalid_signup_date",
+      "total_records": 34,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "null_product_fields",
+      "total_records": 12,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "duplicate_product_id",
+      "total_records": 12,
+      "failed_records": 2,
+      "status": "failed",
+      "details": "2 row(s) failed"
+    },
+    {
+      "check": "invalid_price",
+      "total_records": 12,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "null_order_fields",
+      "total_records": 127,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "duplicate_order_id",
+      "total_records": 127,
+      "failed_records": 2,
+      "status": "failed",
+      "details": "2 row(s) failed"
+    },
+    {
+      "check": "invalid_quantity",
+      "total_records": 127,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "invalid_discount",
+      "total_records": 127,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "invalid_order_date",
+      "total_records": 127,
+      "failed_records": 1,
+      "status": "failed",
+      "details": "1 row(s) failed"
+    },
+    {
+      "check": "invalid_customer_reference",
+      "total_records": 127,
+      "failed_records": 3,
+      "status": "failed",
+      "details": "3 row(s) failed"
+    },
+    {
+      "check": "invalid_product_reference",
+      "total_records": 127,
+      "failed_records": 18,
+      "status": "failed",
+      "details": "18 row(s) failed"
+    },
+    {
+      "check": "invalid_order_status",
+      "total_records": 127,
+      "failed_records": 0,
+      "status": "passed",
+      "details": "0 row(s) failed"
+    },
+    {
+      "check": "fact_null_values",
+      "total_records": 101,
+      "failed_records": 0,
+      "status": "passed",
+      "details": "Required dimensional joins and calculated fields are present"
+    },
+    {
+      "check": "orphan_fact_records",
+      "total_records": 101,
+      "failed_records": 0,
+      "status": "passed",
+      "details": "Spark inner joins prevent orphan fact rows"
+    }
+  ]
+}

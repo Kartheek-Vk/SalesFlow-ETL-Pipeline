@@ -1,0 +1,5 @@
+product_id,product_name,category,unit_price,rejection_reasons
+P0001,Wireless Headphones,Electronics,178.03,duplicate_product_id
+P0001,Duplicate Product,Electronics,178.03,duplicate_product_id
+P9999,Mechanical Keyboard,Electronics,-20,invalid_price
+P9998,,Electronics,256.42,null_product_fields

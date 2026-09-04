@@ -1,0 +1,6 @@
+customer_id,customer_name,age,gender,city,state,signup_date,rejection_reasons
+C0001,Customer 01,26,F,Mumbai,Maharashtra,2023-01-10,duplicate_customer_id
+C0001,Duplicate Customer,26,F,Mumbai,Maharashtra,2023-01-10,duplicate_customer_id
+C9999,Customer 02,8,F,Hyderabad,Telangana,2023-01-19,impossible_age
+C9998,Customer 03,33,F,Chennai,Tamil Nadu,not-a-date,invalid_signup_date
+C9997,,25,Non-binary,New Delhi,Delhi,2023-02-06,null_customer_fields

@@ -1,0 +1,9 @@
+product_id,product_name,category,unit_price
+P0002,Mechanical Keyboard,Electronics,205.08
+P0003,Smart Watch,Electronics,256.42
+P0004,Desk Lamp,Home,224.99
+P0005,Coffee Maker,Home,227.69
+P0006,Air Purifier,Home,109.99
+P0007,Yoga Mat,Fitness,127.73
+P0008,Resistance Bands,Fitness,219.85
+P0009,Running Shoes,Fitness,57.36

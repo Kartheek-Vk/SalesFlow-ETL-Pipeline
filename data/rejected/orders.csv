@@ -1,0 +1,27 @@
+order_id,customer_id,product_id,order_date,quantity,discount,payment_method,order_status,rejection_reasons
+O00001,C0012,P0004,2024-12-09,3,0,Card,delivered,duplicate_order_id
+O00003,C0027,P0001,2024-04-27,1,0.1,Cash on Delivery,delivered,invalid_product_reference
+O00010,C0015,P0001,2024-05-14,2,0.2,UPI,cancelled,invalid_product_reference
+O00017,C0011,P0001,2024-10-28,2,0.2,Card,delivered,invalid_product_reference
+O00018,C0023,P0001,2024-04-27,1,0,Net Banking,delivered,invalid_product_reference
+O00026,C0013,P0001,2024-03-25,4,0,Cash on Delivery,delivered,invalid_product_reference
+O00040,C0030,P0001,2024-02-17,4,0.1,UPI,delivered,invalid_product_reference
+O00044,C0012,P0001,2024-07-02,2,0.05,UPI,delivered,invalid_product_reference
+O00052,C0009,P0001,2024-02-25,4,0.1,Net Banking,delivered,invalid_product_reference
+O00054,C0001,P0009,2024-10-02,2,0.1,Cash on Delivery,delivered,invalid_customer_reference
+O00058,C0027,P0001,2024-06-04,3,0.05,Cash on Delivery,pending,invalid_product_reference
+O00064,C0021,P0001,2024-02-24,4,0.05,Card,pending,invalid_product_reference
+O00073,C0013,P0001,2024-10-21,4,0.15,UPI,returned,invalid_product_reference
+O00075,C0016,P0001,2024-07-18,3,0.15,Card,pending,invalid_product_reference
+O00081,C0007,P0001,2024-11-14,2,0.05,Card,delivered,invalid_product_reference
+O00094,C0001,P0002,2024-05-30,2,0.15,Card,delivered,invalid_customer_reference
+O00103,C0019,P0001,2024-03-18,2,0.2,Net Banking,delivered,invalid_product_reference
+O00106,C0020,P0001,2024-11-08,1,0.05,Card,delivered,invalid_product_reference
+O00115,C0022,P0001,2024-12-10,3,0.2,UPI,pending,invalid_product_reference
+O00001,C0012,P0004,2024-12-09,3,0,Card,delivered,duplicate_order_id
+O99999,C0008,P0003,2024-08-24,-2,0.1,Card,delivered,invalid_quantity
+O99998,C0027,P0001,2024-04-27,1,1.5,Cash on Delivery,delivered,invalid_discount; invalid_product_reference
+O99997,C0007,P0006,2024-99-99,4,0.15,Cash on Delivery,delivered,invalid_order_date
+O99996,C4040,P0004,2024-10-14,3,0.2,Cash on Delivery,cancelled,invalid_customer_reference
+O99995,C0013,P4040,2024-04-22,2,0.2,Cash on Delivery,delivered,invalid_product_reference
+O99994,C0002,P0002,2024-03-19,2,0.15,,delivered,null_order_fields
