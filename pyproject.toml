@@ -13,3 +13,5 @@ dependencies = [
     "pytest>=9.1.1",
     "uvicorn>=0.52.4",
 ]
+[tool.uv]
+package = false
